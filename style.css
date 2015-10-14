@@ -29,7 +29,6 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	height: 100%;
 	line-height: 1;
 }
 
@@ -80,8 +79,48 @@ a:hover {
 	width: 375px;
 	padding: 0px 30px 20px 30px;
 	border-left: 10px solid #000;
-	margin: 175px auto 0px auto;
+	margin: 175px auto 50px auto;
 	background-color: #fff;
+	cursor: pointer;
+}
+
+.content-container:hover ~ .fancy-stuff .design {
+	color: #ccc;
+}
+
+.content-container:hover ~ .fancy-stuff .design ~ .prototype {
+	color: #ccc;
+}
+
+.fancy-stuff {
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	font-family: 'Playfair Display', serif;
+	font-weight: 700;
+	font-size: 40px;
+	height: 60px;
+	width: 375px;
+	margin: 0px auto 0px auto;
+}
+
+.design {
+	text-align: left;
+	order: 1;
+	width: 140px;
+	padding-top: 25px;
+	color: #fff;
+	transition: .5s;
+}
+
+.prototype {
+	text-align: left;
+	order: 2;
+	flex-grow: 1;
+	padding-top: 25px;
+	color: #fff;
+	transition: .5s;
+	transition-delay: .5s;
 }
 
 
