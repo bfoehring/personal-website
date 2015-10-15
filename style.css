@@ -132,7 +132,7 @@ a:hover {
 	color: #999;
 }
 
-@media screen and (max-width: 421px) {
+@media screen and (max-width: 420px) {
 
 		.content-container {
 		width: 330px;
