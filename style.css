@@ -93,9 +93,6 @@ a:hover {
 }
 
 .fancy-stuff {
-	display: flex;
-	align-items: center;
-	flex-direction: row;
 	font-family: 'Playfair Display', serif;
 	font-weight: 700;
 	font-size: 40px;
@@ -106,21 +103,20 @@ a:hover {
 
 .design {
 	text-align: left;
-	order: 1;
-	width: 140px;
+	width: 175px;
 	padding-top: 25px;
 	color: #fff;
 	transition: .5s;
+	float: left;
 }
 
 .prototype {
 	text-align: left;
-	order: 2;
-	flex-grow: 1;
 	padding-top: 25px;
 	color: #fff;
 	transition: .5s;
 	transition-delay: .5s;
+	float:left;
 }
 
 
