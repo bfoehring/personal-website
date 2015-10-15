@@ -116,24 +116,26 @@ a:hover {
 	float:left;
 }
 
-.menu {
-	color: #bbb;
+.menu-container {
 	position: fixed;
 	top: 0px;
-	cursor: pointer;
-	height: 21px;
+	height: 20px;
 	width: 100%;
 	padding: 15px 0px 0px 0px;
+}
+
+.menu {
+	color: #bbb;
+	width: 20px;
+	height: 20px;
+	margin-right: 10px;
+	cursor: pointer;
 	transition: .2s;
+	float: right;
 }
 
 .menu:hover {
 	color: #999;
-}
-
-.fa-beer {
-	float: right;
-	margin-right: 15px;
 }
 
 @media screen and (max-width: 420px) {
