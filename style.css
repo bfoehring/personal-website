@@ -154,6 +154,14 @@ a:hover {
 		margin: 0px 0px 0px 40px;
 	}
 
+		.content-container:hover ~ .fancy-stuff .design {
+		color: #fff;
+	}
+
+		.content-container:hover ~ .fancy-stuff .design ~ .prototype {
+		color: #fff;
+	}
+
 }
 
 
