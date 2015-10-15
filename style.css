@@ -96,7 +96,6 @@ a:hover {
 	font-family: 'Playfair Display', serif;
 	font-weight: 700;
 	font-size: 40px;
-	height: 60px;
 	width: 375px;
 	margin: 0px auto 0px auto;
 }
@@ -104,7 +103,6 @@ a:hover {
 .design {
 	text-align: left;
 	width: 175px;
-	padding-top: 25px;
 	color: #fff;
 	transition: .5s;
 	float: left;
@@ -112,14 +110,40 @@ a:hover {
 
 .prototype {
 	text-align: left;
-	padding-top: 25px;
 	color: #fff;
 	transition: .5s;
 	transition-delay: .5s;
 	float:left;
 }
 
+.menu {
+	color: #bbb;
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	cursor: pointer;
+	height: 16px;
+	width: 16px;
+	padding: 2px;
+	transition: .2s;
+}
 
+.menu:hover {
+	color: #999;
+}
+
+@media screen and (max-width: 421px) {
+
+		.content-container {
+		width: 330px;
+		padding: 0px 30px 20px 30px;
+		margin: 50px 10px 50px 0px;
+	}
+		.fancy-stuff {
+		margin: 0px 0px 0px 40px;
+	}
+
+}
 
 
 
