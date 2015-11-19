@@ -13,7 +13,8 @@ $(document).ready(function(){
 			$('.modal-pass-hidden').removeClass('modal-pass');
 			$('.modal-menu-hidden').addClass('modal-menu');
 		} else {
-
+			$('.pass').addClass('pass-error');
+			$('.pass').text('Sorry, try again!');
 		}
 	});
 
