@@ -177,10 +177,9 @@ li {
 	visibility: visible;
 	opacity: 1;
 	z-index: 9999;
-	margin: 175px auto 0px auto;
+	margin: -25px auto 0px auto;
 	text-align: left;
 	width: 435px;
-	transition: visibility 0s, opacity .2s ease-in;
 }
 
 .modal-menu-link {
@@ -209,6 +208,65 @@ li {
 
 .fa-times:hover {
 	color: #aaa;
+}
+
+.modal-pass-hidden {
+	visibility: hidden;
+	opacity: 0;
+	transition: visibility 0s, opacity .2s ease-in;
+	pointer-events: none;
+}
+
+.modal-pass {
+	visibility: visible;
+	opacity: 1;
+	pointer-events: auto;
+	width: 435px;
+	margin: 175px auto 0px auto;
+}
+
+.pass {
+	border: 1px solid #ccc;
+	height: 20px;
+	font-family: 'Playfair Display', serif;
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 18px;
+	color: #000;
+	padding: 10px;
+}
+
+.pass:focus {
+	outline: none !important;
+    border:1px solid #000;
+}
+
+[contenteditable=true]:empty:before {
+  	content: attr(placeholder);
+  	color: #ccc;
+  	font-style: italic;
+  	cursor: text;
+  	display: block; /* For Firefox */
+}
+
+.submit-button {
+	padding: 10px;
+	border: 2px solid #000;
+	color: #000;
+	font-family: 'Playfair Display', serif;
+	font-size: 14px;
+	font-weight: 600;
+	text-align: center;
+	width: 100px;
+	margin-top: 20px;
+	cursor: pointer;
+	background: #fff;
+	transition: color .2s, background .2s ease-in;
+}
+
+.submit-button:hover {
+	background: #000;
+	color: #fff;
 }
 
 @media screen and (max-width: 420px) {
