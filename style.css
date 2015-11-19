@@ -243,12 +243,6 @@ li {
 
 .pass-error {
 	border: 1px solid red;
-	height: 20px;
-	font-family: 'Playfair Display', serif;
-	font-size: 14px;
-	font-weight: 600;
-	line-height: 18px;
-	padding: 10px;
 }
 
 [contenteditable=true]:empty:before {

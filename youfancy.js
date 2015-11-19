@@ -30,6 +30,10 @@ $(document).ready(function(){
 
 	});
 
+	$('.pass').focus(function(){
+		$('.pass').removeClass('pass-error');
+	});
+
 	$(document).bind('keydown', function(e) { 
         if (e.which == 27) {
             $('.modal-film-hidden').removeClass('modal-film');
