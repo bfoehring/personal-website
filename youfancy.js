@@ -1,55 +1,48 @@
-$(document).ready(function(){
+$(".nav-link").on("click", hideContent);
+$(".cancel").on("click", hideLog);
 
-	$('.menu').click(function(){
-		$('.modal-film-hidden').addClass('modal-film');
-		$('.modal-pass-hidden').addClass('modal-pass');
-	});
+function hideContent() {
+	$(".content-contain").addClass("content-contain-hidden");
+	setTimeout(function() {
+		toggleVisCont();
+	}, 200);
+}
 
-	$('.submit-button').click(function(){
-		
-		var password = $('.pass').text(); 
+function toggleVisCont() {
+	$(".content-contain-hidden").css("display", "none");
+	showForm();
+}
 
-		if( password == 'Yooooooooo' ){
-			$('.modal-pass-hidden').removeClass('modal-pass');
-			$('.modal-menu-hidden').addClass('modal-menu');
-		} else {
-			$('.pass').addClass('pass-error');
-			$('.pass').text('Sorry, try again!');
-		}
-	});
+function showForm() {
+	$(".login-contain").css("display", "block");
+	setTimeout(function() {
+		toggleLogCont();
+	}, 50);
+}
 
-	$('.fa-times').click(function(){
+function toggleLogCont() {
+	$(".login-contain").addClass("login-contain-visible");
+}
 
-		if ( $('.modal-pass-hidden').hasClass('modal-pass') ) {
-				$('.modal-pass-hidden').removeClass('modal-pass');
-				$('.modal-film-hidden').removeClass('modal-film');
-		} else {
-				$('.modal-menu-hidden').removeClass('modal-menu');
-				$('.modal-film-hidden').removeClass('modal-film');
-		}
+function hideLog() {
+	$(".login-contain").removeClass("login-contain-visible");
+	setTimeout(function() {
+		toggleVisLog();
+	}, 200);
+}
 
-	});
+function toggleVisLog() {
+	$(".login-contain").css("display", "none");
+	showCont();
+}
 
-	$('.pass').focus(function(){
-		$('.pass').removeClass('pass-error');
-	});
+function showCont() {
+	$(".content-contain-hidden").css("display", "block");
+	setTimeout(function() {
+		toggleVisContOn();
+	}, 50);
+}
 
-	$(document).bind('keydown', function(e) { 
-        if (e.which == 27) {
-            $('.modal-film-hidden').removeClass('modal-film');
-			$('.modal-menu-hidden').removeClass('modal-menu');
-			$('.modal-pass-hidden').removeClass('modal-pass');
-        }
-  	});
-
-  	$(document).ready(function(e){
-		$(".pass").keydown(function(e) {
-		 if (e.keyCode == 13 && e.shiftKey){
-		 	  e.preventDefault();
-		 } else if(e.keyCode == 13){
-		      e.preventDefault();
-		 }
-		});
-	});	
-
-});
+function toggleVisContOn() {
+	$(".content-contain").removeClass("content-contain-hidden");
+}
