@@ -459,9 +459,9 @@ body {
 
 h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 100px;
+  font-size: 90px;
   color: #364141;
-  margin: 48px 0px;
+  margin: 40px 0px;
 }
 
 p {
@@ -482,7 +482,7 @@ a:hover {
 
 .header {
   background: #fff;
-  height: 128px;
+  height: 112px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -506,7 +506,7 @@ a:hover {
 
 .header-inner-page {
   background: #fff;
-  height: 128px;
+  height: 112px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -533,6 +533,10 @@ a:hover {
   padding: 32px;
   box-sizing: border-box;
   margin: auto;
+}
+
+.home-contain {
+  padding: 0px 32px 32px 32px;
 }
 
 .circles {
