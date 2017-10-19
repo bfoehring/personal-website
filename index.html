@@ -46,14 +46,27 @@
 		<div class="login-contain">
 			<h1>Come right in.</h1>
 			<form class="vert-form">
-				<div><input type="text" name="username" placeholder="Username"></div>
-				<div><input type="password" name="password" placeholder="Password"></div>
+				<div><input type="text" name="username" placeholder="Username" id="email"></div>
+				<div><input type="password" name="password" placeholder="Password" id="password"></div>
 				<div><input type="submit" name="submit" value="Sign In"></div>
 				<div class="cancel">Cancel</div>
 			</form>
 		</div>
 	</div>
 
+	<script src="https://www.gstatic.com/firebasejs/4.5.2/firebase.js"></script>
+	<script>
+	  // Initialize Firebase
+	  var config = {
+	    apiKey: "AIzaSyB14ul0hmIrghU3dB1tctz7Jk3zmW0aWeg",
+	    authDomain: "personal-site-c2a91.firebaseapp.com",
+	    databaseURL: "https://personal-site-c2a91.firebaseio.com",
+	    projectId: "personal-site-c2a91",
+	    storageBucket: "personal-site-c2a91.appspot.com",
+	    messagingSenderId: "952342534924"
+	  };
+	  firebase.initializeApp(config);
+	</script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script type="text/javascript" src="youfancy.js"></script>
 

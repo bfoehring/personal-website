@@ -1,5 +1,19 @@
-$(".nav-link").on("click", hideContent);
+checkAuth();
+
+function checkAuth() {
+	firebase.auth().onAuthStateChanged(function(user) {
+	  if (user) {
+	  	console.log(user);
+		$(".nav-link").on("click", browseFreely);
+	  } else {
+	   	console.log("not logged in");
+	   	$(".nav-link").on("click", hideContent);
+	  }
+	});
+}
+
 $(".cancel").on("click", hideLog);
+$(".vert-form").on("submit", doAuth);
 
 function hideContent() {
 	$(".content-contain").addClass("content-contain-hidden");
@@ -46,3 +60,43 @@ function showCont() {
 function toggleVisContOn() {
 	$(".content-contain").removeClass("content-contain-hidden");
 }
+
+function browseFreely() {
+	location.assign("work-landing.html");
+}
+
+function doAuth(e) {
+
+	e.preventDefault();
+
+	var email = $("#email").val();
+	var password = $("#password").val();
+
+	firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+
+	  var errorCode = error.code;
+	  var errorMessage = error.message;
+
+	  if(errorCode) {
+	  	console.log(errorCode);
+	  } else {
+	  	console.log(errorMessage);
+	  } 
+
+	});
+
+	firebase.auth().onAuthStateChanged(function(user) {
+	  if (user) {
+	  	console.log(user);
+	  	location.assign("work-landing.html");
+	  } else {
+	   	console.log("not logged in");
+	  }
+	});
+
+}
+
+
+
+
+
