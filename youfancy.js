@@ -1,55 +1,102 @@
-$(document).ready(function(){
+checkAuth();
 
-	$('.menu').click(function(){
-		$('.modal-film-hidden').addClass('modal-film');
-		$('.modal-pass-hidden').addClass('modal-pass');
+function checkAuth() {
+	firebase.auth().onAuthStateChanged(function(user) {
+	  if (user) {
+	  	console.log(user);
+		$(".nav-link").on("click", browseFreely);
+	  } else {
+	   	console.log("not logged in");
+	   	$(".nav-link").on("click", hideContent);
+	  }
+	});
+}
+
+$(".cancel").on("click", hideLog);
+$(".vert-form").on("submit", doAuth);
+
+function hideContent() {
+	$(".content-contain").addClass("content-contain-hidden");
+	setTimeout(function() {
+		toggleVisCont();
+	}, 200);
+}
+
+function toggleVisCont() {
+	$(".content-contain-hidden").css("display", "none");
+	showForm();
+}
+
+function showForm() {
+	$(".login-contain").css("display", "block");
+	setTimeout(function() {
+		toggleLogCont();
+	}, 50);
+}
+
+function toggleLogCont() {
+	$(".login-contain").addClass("login-contain-visible");
+}
+
+function hideLog() {
+	$(".login-contain").removeClass("login-contain-visible");
+	setTimeout(function() {
+		toggleVisLog();
+	}, 200);
+}
+
+function toggleVisLog() {
+	$(".login-contain").css("display", "none");
+	showCont();
+}
+
+function showCont() {
+	$(".content-contain-hidden").css("display", "block");
+	setTimeout(function() {
+		toggleVisContOn();
+	}, 50);
+}
+
+function toggleVisContOn() {
+	$(".content-contain").removeClass("content-contain-hidden");
+}
+
+function browseFreely() {
+	location.assign("work-landing.html");
+}
+
+function doAuth(e) {
+
+	e.preventDefault();
+
+	var email = $("#email").val();
+	var password = $("#password").val();
+
+	firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+
+	  var errorCode = error.code;
+	  var errorMessage = error.message;
+
+	  if(errorCode) {
+	  	console.log(errorCode);
+	  } else {
+	  	console.log(errorMessage);
+	  } 
+
 	});
 
-	$('.submit-button').click(function(){
-		
-		var password = $('.pass').text(); 
-
-		if( password == 'Yooooooooo' ){
-			$('.modal-pass-hidden').removeClass('modal-pass');
-			$('.modal-menu-hidden').addClass('modal-menu');
-		} else {
-			$('.pass').addClass('pass-error');
-			$('.pass').text('Sorry, try again!');
-		}
+	firebase.auth().onAuthStateChanged(function(user) {
+	  if (user) {
+	  	console.log(user);
+	  	location.assign("work-landing.html");
+	  } else {
+	   	console.log("not logged in");
+	  }
 	});
 
-	$('.fa-times').click(function(){
+}
 
-		if ( $('.modal-pass-hidden').hasClass('modal-pass') ) {
-				$('.modal-pass-hidden').removeClass('modal-pass');
-				$('.modal-film-hidden').removeClass('modal-film');
-		} else {
-				$('.modal-menu-hidden').removeClass('modal-menu');
-				$('.modal-film-hidden').removeClass('modal-film');
-		}
 
-	});
 
-	$('.pass').focus(function(){
-		$('.pass').removeClass('pass-error');
-	});
 
-	$(document).bind('keydown', function(e) { 
-        if (e.which == 27) {
-            $('.modal-film-hidden').removeClass('modal-film');
-			$('.modal-menu-hidden').removeClass('modal-menu');
-			$('.modal-pass-hidden').removeClass('modal-pass');
-        }
-  	});
 
-  	$(document).ready(function(e){
-		$(".pass").keydown(function(e) {
-		 if (e.keyCode == 13 && e.shiftKey){
-		 	  e.preventDefault();
-		 } else if(e.keyCode == 13){
-		      e.preventDefault();
-		 }
-		});
-	});	
-
-});
