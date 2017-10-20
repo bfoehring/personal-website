@@ -468,7 +468,7 @@ h3 {
   font-size: 16px;
   color: #515E5F;
   font-weight: 600;
-  margin: 32px 0px 16px 0px;
+  margin: 24px 0px 16px 0px;
 }
 
 p {
@@ -791,6 +791,10 @@ img {
   background-size: contain;
 }
 
+.siteLink {
+  margin-top: 16px;
+}
+
 .landscape-logotype {
   background-image: url("images/Landscape-Logotype.png");
 }
@@ -825,6 +829,34 @@ img {
 
 .landscape-tile {
   background-image: url("images/Landscape-WorkTile.png");
+}
+
+.messBub-det {
+  background-image: url("images/MessageBubble-Detail.png");
+}
+
+.messBub-tog {
+  background-image: url("images/MessageBubble-ToggleDis.png");
+}
+
+.messBub-coldet {
+  background-image: url("images/MessageBubble-CollisionDet.png");
+}
+
+.messBub-stats {
+  background-image: url("images/MessageBubble-Stats.png");
+}
+
+.messBub-keyboard {
+  background-image: url("images/MessageBubble-KeyboardMode.png");
+}
+
+.messBub-anatomy {
+  background-image: url("images/MessageBubble-Anatomy.png");
+}
+
+.messBub-tile {
+  background-image: url("images/MessageBubble-WorkTile.png");
 }
 
 
