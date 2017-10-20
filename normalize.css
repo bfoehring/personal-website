@@ -972,6 +972,9 @@ img {
   background-image: url("images/Compose-Timeline.png");
 }
 
+.compose-tile {
+  background-image: url("images/Compose-WorkTile.png");
+}
 
 
 
