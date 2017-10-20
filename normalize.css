@@ -935,6 +935,42 @@ img {
   background-image: url("images/AssetLibrary-BG.png");
 }
 
+.compose-mod {
+  background-image: url("images/Compose-Mod.png");
+}
+
+.compose-hiw {
+  background-image: url("images/Compose-HIW.png");
+}
+
+.compose-sched {
+  background-image: url("images/Compose-Sched.png");
+}
+
+.compose-queue {
+  background-image: url("images/Compose-Queue.png");
+}
+
+.compose-video {
+  background-image: url("images/Compose-Video.png");
+}
+
+.compose-approval {
+  background-image: url("images/Compose-Approval.png");
+}
+
+.compose-notif {
+  background-image: url("images/Compose-Notifications.png");
+}
+
+.compose-utm {
+  background-image: url("images/Compose-UTM.png");
+}
+
+.compose-time {
+  background-image: url("images/Compose-Timeline.png");
+}
+
 
 
 
