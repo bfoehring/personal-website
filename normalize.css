@@ -859,6 +859,19 @@ img {
   background-image: url("images/MessageBubble-WorkTile.png");
 }
 
+.bulk-anatomy {
+  background-image: url("images/BulkAction-Anatomy.png");
+}
+
+.bulk-flowA {
+  background-image: url("images/BulkAction-MVPFlowA.png");
+}
+
+.bulk-flowB {
+  background-image: url("images/BulkAction-MVPFlowB.png");
+}
+
+
 
 
 
