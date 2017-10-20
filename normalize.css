@@ -903,5 +903,39 @@ img {
   background-image: url("images/Tabbist-Pad.png");
 }
 
+.al-tile {
+  background-image: url("images/AssetLibrary-WorkTile.png");
+}
+
+.al-grid {
+  background-image: url("images/AssetLibrary-Grid.png");
+}
+
+.al-list {
+  background-image: url("images/AssetLibrary-List.png");
+}
+
+.al-select {
+  background-image: url("images/AssetLibrary-Select.png");
+}
+
+.al-attach {
+  background-image: url("images/AssetLibrary-Attach.png");
+}
+
+.al-layer {
+  background-image: url("images/AssetLibrary-Layer.png");
+}
+
+.al-settings {
+  background-image: url("images/AssetLibrary-Settings.png");
+}
+
+.al-bg {
+  background-image: url("images/AssetLibrary-BG.png");
+}
+
+
+
 
 
