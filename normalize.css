@@ -871,8 +871,37 @@ img {
   background-image: url("images/BulkAction-MVPFlowB.png");
 }
 
+.bulk-tile {
+  background-image: url("images/BulkAction-WorkTile.png");
+}
 
+.tabbist-tile {
+  background-image: url("images/Tabbist-WorkTile.png");
+}
 
+.tabbist-flow {
+  background-image: url("images/Tabbist-Flow.png");
+}
+
+.tabbist-start {
+  background-image: url("images/Tabbist-Start.png");
+}
+
+.tabbist-info {
+  background-image: url("images/Tabbist-Info.png");
+}
+
+.tabbist-location {
+  background-image: url("images/Tabbist-Location.png");
+}
+
+.tabbist-pay {
+  background-image: url("images/Tabbist-Pay.png");
+}
+
+.tabbist-pad {
+  background-image: url("images/Tabbist-Pad.png");
+}
 
 
 
