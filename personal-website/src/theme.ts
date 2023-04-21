@@ -1,20 +1,23 @@
 import type { Theme } from 'theme-ui'
 
-export const theme: Theme = {
+export const engineeringTheme: Theme = {
   colors: {
     appBackground: '#fff',
     modes: {
-      engineering: {
-        dark: {
-          appBackground: '#000',
-        }
-      },
-      design: {
-        appBackground: '#FDFDCA',
-        dark: {
-          appBackground: '#2F2C41'
-        }
+      dark: {
+        appBackground: '#000',
       }
     }
-  },
+  }
+}
+
+export const designTheme: Theme = {
+  colors: {
+    appBackground: '#FDFDCA',
+    modes: {
+      dark: {
+        appBackground: '#2F2C41',
+      },
+    },
+  }
 }
