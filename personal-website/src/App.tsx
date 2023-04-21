@@ -4,7 +4,7 @@ import { ThemeProvider, useColorMode } from 'theme-ui'
 import { engineeringTheme, designTheme } from './theme'
 import { PropsWithChildren, useState } from 'react'
 
-const ModeToggle = () => {
+const ModeToggle: React.FC = () => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [mode, setMode] = useColorMode();
 
@@ -22,7 +22,7 @@ const AppWrap: React.FC<PropsWithChildren> = ({children}) => {
     height: '100vh',
     width: '100vw'
   }
-  
+
   return(
     <div sx={appWrapStyles}>{children}</div>
   )
@@ -44,12 +44,3 @@ function App() {
 }
 
 export default App;
-
-{/* <div
-sx={{
-  background: 'appBackground',
-  height: '100vh',
-  width: '100vw'
-}}
->
-</div> */}
