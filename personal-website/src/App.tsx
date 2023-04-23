@@ -1,4 +1,4 @@
-// @ts-nocheck
+/** @jsxImportSource @emotion/react */
 import './app.css'
 import { 
   engineeringTheme, 
@@ -6,17 +6,56 @@ import {
   engineeringDarkTheme, 
   designDarkTheme 
 } from './theme'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, ReactElement } from 'react'
 import { ThemeProvider } from '@emotion/react'
 import styled from '@emotion/styled'
+import { Sun, Moon } from './icons/Icon'
 import { Text } from './Text'
+import { Logo } from './Logo'
+import { HeadlineButton, SmallBodyButton } from './Button'
+import { Link } from './Link'
 
-const ModeToggle = ({setMode}: {setMode: React.Dispatch<string>}) => {
+const ModeToggle = ({mode, setMode}: {mode: string, setMode: React.Dispatch<string>}) => {
+
+  const setModeIcon = (mode: string | undefined): ReactElement => {
+    switch (mode) {
+      case 'light':
+        return <Moon />
+      case 'dark':
+        return <Sun />
+      default:
+        return <Sun />
+    }
+  }
+
+  const checkMode = (mode: string) => {
+    if (mode === 'light') {
+      return 'dark';
+    }
+
+    if (mode === 'dark') {
+      return 'light';
+    }
+
+    return ''
+  }
+
   return (
-    <select onChange={(e) => setMode(e.target.value)}>
-      <option>light</option>
-      <option>dark</option>
-    </select>
+    <SmallBodyButton onClick={() => setMode(checkMode(mode))}>
+      <div
+        css={{
+          display: 'flex',
+          alignItems: 'center'
+        }}
+      >
+        {
+          setModeIcon(mode)
+        }
+        <div css={{marginLeft: '8px'}}>
+          Mode
+        </div>
+      </div>
+    </SmallBodyButton>
   )
 }
 
@@ -25,6 +64,21 @@ const AppWrap = styled.div`
   height: 100vh;
   width: 100vw;
   transition: all .25s;
+`
+
+const AppContent = styled.article`
+  box-sizing: border-box;
+  max-width: 1400px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0px auto;
+  padding: 80px;
+`
+
+const AppFooter = styled.footer`
+	display: flex;
 `
 
 function App() {
@@ -55,12 +109,43 @@ function App() {
   return (
       <ThemeProvider theme={theme}>
         <AppWrap>
-          <button onClick={() => setDiscipline('design')}>design</button>
-          <button onClick={() => setDiscipline('engineering')}>engineering</button>
-          <ModeToggle setMode={setMode}/>
-          <Text size='headline'>design + engineering</Text>
-          <Text size='subHeadline'>design engineer, systems</Text>
-          <Text size='subHeadline'>seeds.sproutsocial.com</Text>
+          <AppContent>
+            <header>
+              <Logo />
+            </header>
+            <section>
+              {
+                discipline === 'engineering' ?
+                <div
+                  css={{
+                    display: 'flex'
+                  }}
+                >
+                  <HeadlineButton onClick={() => setDiscipline('design')}>design</HeadlineButton>
+                  <Text size='headline'>&nbsp;+ engineering</Text> :
+                </div> :
+                <div
+                  css={{
+                    display: 'flex'
+                  }}
+                >
+                  <Text size='headline'>design +&nbsp;</Text>
+                  <HeadlineButton onClick={() => setDiscipline('engineering')}>engineering</HeadlineButton>
+                </div>
+              }
+              <Text size='subHeadline'>design engineer, systems</Text>
+              <Link size='subHeadline' href='https://seeds.sproutsocial.com/'>seeds.sproutsocial.com</Link>
+            </section>
+            <AppFooter>
+              <ModeToggle mode={mode} setMode={setMode}/>
+							<Text size='smallBody'>&nbsp;|&nbsp;</Text>
+							<Link size='smallBody' href='https://github.com/bfoehring'>Github</Link>
+							<Text size='smallBody'>&nbsp;|&nbsp;</Text>
+							<Link size='smallBody' href='https://www.linkedin.com/in/billfoehring'>LinkedIn</Link>
+							<Text size='smallBody'>&nbsp;|&nbsp;</Text>
+							<Link size='smallBody' href='mailto:bill.foehring@gmail.com'>Contact</Link>
+            </AppFooter>
+          </AppContent>
         </AppWrap>
       </ThemeProvider>
   );

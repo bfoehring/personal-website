@@ -1,5 +1,3 @@
-//import type { Theme } from 'theme-ui'
-
 const baseTheme = {
   fontSizes: {
     headline: '64px',
@@ -20,9 +18,11 @@ export const engineeringTheme = {
   discipline: 'engineering',
   colors: {
     appBackground: '#FFF',
+    logo: '#000',
     headline: '#DC14FF',
     subHeadline: '#0000FF',
-    body: '#000'
+    body: '#000',
+    smallBody: '#000'
   },
 }
 
@@ -32,9 +32,11 @@ export const engineeringDarkTheme = {
   mode: 'dark',
   colors: {
     appBackground: '#000',
+    logo: '#FFF',
     headline: '#39FF14',
     subHeadline: '#FFF',
-    body: '#FFF'
+    body: '#FFF',
+    smallBody: '#FFF'
   },
 }
 
@@ -43,9 +45,11 @@ export const designTheme = {
   discipline: 'design',
   colors: {
     appBackground: '#FDFDCA',
+    logo: '#B23013',
     headline: '#B23013',
     subHeadline: '#B23013',
-    body: '#B23013'
+    body: '#B23013',
+    smallBody: '#B23013'
   },
 }
 
@@ -54,8 +58,10 @@ export const designDarkTheme = {
   discipline: 'design',
   colors: {
     appBackground: '#2F2C41',
+    logo: '#B59B6E',
     headline: '#B59B6E',
     subHeadline: '#B59B6E',
-    body: '#B59B6E'
+    body: '#B59B6E',
+    smallBody: '#B59B6E'
   },
 }

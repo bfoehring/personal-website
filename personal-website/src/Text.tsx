@@ -1,4 +1,3 @@
-// @ts-nocheck
 import styled from "@emotion/styled"
 
 const BaseTextStyles = styled.span`
@@ -10,6 +9,7 @@ const BaseTextStyles = styled.span`
 const Headline = styled(BaseTextStyles)`
   font-size: ${({theme}) => theme.fontSizes.headline};
   color: ${({theme}) => theme.colors.headline};
+  margin-top: 0px;
 `
 
 const SubHeadline = styled(BaseTextStyles)`
@@ -27,20 +27,21 @@ const Body = styled(BaseTextStyles)`
 `
 
 const SmallBody = styled(BaseTextStyles)`
-  font-size: ${({theme}) => theme.fontSizes.SmallBody};
+  font-size: ${({theme}) => theme.fontSizes.smallBody};
   color: ${({theme}) => theme.colors.smallBody};
 `
 
 interface iText extends React.PropsWithChildren {
   size?: string,
+  as?: React.ElementType
 }
 
-export const Text: React.FC<iText> = ({children, size}) => {
+export const Text: React.FC<iText> = ({children, size, as}) => {
 
   const textType = (size: iText['size']) => {
     switch (size) {
       case 'headline':
-        return <Headline as='h1'>{children}</Headline>;
+        return <Headline as={'h1'}>{children}</Headline>;
       case 'subHeadline':
         return <SubHeadline as='h2'>{children}</SubHeadline>;
       case 'smallBody':
