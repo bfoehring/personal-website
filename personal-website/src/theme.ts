@@ -65,3 +65,29 @@ export const designDarkTheme = {
     smallBody: '#B59B6E'
   },
 }
+
+export const a11yTheme = {
+	...baseTheme,
+	discipline: 'a11y',
+	colors: {
+    appBackground: '#FFF',
+    logo: '#000',
+    headline: '#000',
+    subHeadline: '#000',
+    body: '#000',
+    smallBody: '#000'
+  },
+}
+
+export const a11yDarkTheme = {
+	...baseTheme,
+	discipline: 'a11y',
+	colors: {
+    appBackground: '#000',
+    logo: '#FFF',
+    headline: '#FFF',
+    subHeadline: '#FFF',
+    body: '#FFF',
+    smallBody: '#FFF'
+  },
+}

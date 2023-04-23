@@ -4,16 +4,19 @@ import {
   engineeringTheme, 
   designTheme, 
   engineeringDarkTheme, 
-  designDarkTheme 
+  designDarkTheme, 
+	a11yTheme,
+	a11yDarkTheme
 } from './theme'
 import { useState, useEffect, ReactElement } from 'react'
 import { ThemeProvider, css } from '@emotion/react'
 import styled from '@emotion/styled'
-import { Sun, Moon, Cursor } from './icons/Icon'
+import { Sun, Moon, Cursor, Eye } from './icons/Icon'
 import { Text } from './Text'
 import { Logo } from './Logo'
 import { HeadlineButton, SmallBodyButton } from './Button'
 import { Link } from './Link'
+import { Pipe } from './Pipe'
 
 const ModeToggle = ({mode, setMode}: {mode: string, setMode: React.Dispatch<string>}) => {
 
@@ -98,6 +101,12 @@ function App() {
         setTheme(designTheme);
         return;
       }
+
+			if (discipline === 'a11y') {
+        setTheme(a11yTheme);
+        return;
+      }
+
       setTheme(engineeringTheme);
       return;
     }
@@ -107,6 +116,12 @@ function App() {
         setTheme(designDarkTheme);
         return;
       }
+
+			if (discipline === 'a11y') {
+        setTheme(a11yDarkTheme);
+        return;
+      }
+
       setTheme(engineeringDarkTheme);
       return;
     }
@@ -168,11 +183,25 @@ function App() {
             </section>
             <AppFooter>
               <ModeToggle mode={mode} setMode={setMode}/>
-							<Text size='smallBody'>&nbsp;|&nbsp;</Text>
+							<Pipe />
+							<SmallBodyButton onClick={() => setDiscipline('a11y')}>
+								<div
+									css={{
+										display: 'flex',
+										alignItems: 'center'
+									}}
+								>
+									<Eye />
+									<div css={{marginLeft: '8px'}}>
+										A11y
+									</div>
+								</div>
+							</SmallBodyButton>
+							<Pipe />
 							<Link size='smallBody' href='https://github.com/bfoehring'>Github</Link>
-							<Text size='smallBody'>&nbsp;|&nbsp;</Text>
+							<Pipe />
 							<Link size='smallBody' href='https://www.linkedin.com/in/billfoehring'>LinkedIn</Link>
-							<Text size='smallBody'>&nbsp;|&nbsp;</Text>
+							<Pipe />
 							<Link size='smallBody' href='mailto:bill.foehring@gmail.com'>Contact</Link>
             </AppFooter>
           </AppContent>
