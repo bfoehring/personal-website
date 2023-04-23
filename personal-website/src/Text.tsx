@@ -6,10 +6,21 @@ const BaseTextStyles = styled.span`
   transition: all .25s;
 `
 
-const Headline = styled(BaseTextStyles)`
+const Headline = styled(BaseTextStyles)<iText>`
   font-size: ${({theme}) => theme.fontSizes.headline};
   color: ${({theme}) => theme.colors.headline};
-  margin-top: 0px;
+	margin: 0px;
+
+	&::before {
+		content: "${({before}) => before}";
+	}
+
+	@media (max-width: 800px) {
+		font-size: 48px;
+		&::before {
+			content: "";
+		}
+	}
 `
 
 const SubHeadline = styled(BaseTextStyles)`
@@ -33,15 +44,16 @@ const SmallBody = styled(BaseTextStyles)`
 
 interface iText extends React.PropsWithChildren {
   size?: string,
-  as?: React.ElementType
+  //as?: React.ElementType,
+	before?: string
 }
 
-export const Text: React.FC<iText> = ({children, size, as}) => {
+export const Text: React.FC<iText> = ({children, size, before}) => {
 
-  const textType = (size: iText['size']) => {
+  const textType = (size: iText['size'], before: iText['before']) => {
     switch (size) {
       case 'headline':
-        return <Headline as={'h1'}>{children}</Headline>;
+        return <Headline as={'h1'} before={before}>{children}</Headline>;
       case 'subHeadline':
         return <SubHeadline as='h2'>{children}</SubHeadline>;
       case 'smallBody':
@@ -51,5 +63,5 @@ export const Text: React.FC<iText> = ({children, size, as}) => {
     }
   }
 
-  return textType(size);
+  return textType(size, before);
 }

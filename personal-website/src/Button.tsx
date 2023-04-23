@@ -11,6 +11,7 @@ const Button = styled.button<IButton>`
   color: ${({theme, size = 'body'}) => theme.colors[size]};
   transition: all .25s;
   padding: 0px;
+	text-align: left;
 `
 
 interface IButton extends React.PropsWithChildren {

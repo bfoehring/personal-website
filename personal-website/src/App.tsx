@@ -7,7 +7,7 @@ import {
   designDarkTheme 
 } from './theme'
 import { useState, useEffect, ReactElement } from 'react'
-import { ThemeProvider } from '@emotion/react'
+import { ThemeProvider, css } from '@emotion/react'
 import styled from '@emotion/styled'
 import { Sun, Moon, Cursor } from './icons/Icon'
 import { Text } from './Text'
@@ -74,7 +74,13 @@ const AppContent = styled.article`
   flex-direction: column;
   justify-content: space-between;
   margin: 0px auto;
-  padding: 80px;
+  padding: 80px 0px;
+	transition: all .25s;
+
+	@media (max-width: 800px) {
+		margin: 0px;
+  	padding: 20px;
+	}
 `
 
 const AppFooter = styled.footer`
@@ -117,17 +123,28 @@ function App() {
               {
                 discipline === 'engineering' ?
                 <div
-                  css={{
-                    display: 'flex'
-                  }}
+                  css={css`
+										display: flex;
+										margin-bottom: 64px;
+										@media (max-width: 800px) {
+											flex-direction: column;
+										}
+									`
+									}
                 >
                   <HeadlineButton onClick={() => setDiscipline('design')}>design</HeadlineButton>
-                  <Text size='headline'>&nbsp;+ engineering</Text>
+                  {/* eslint-disable-next-line no-octal-escape */}
+                 <Text size='headline' before="\00a0">+ engineering</Text>
                 </div> :
                 <div
-                  css={{
-                    display: 'flex'
-                  }}
+									css={css`
+										display: flex;
+										margin-bottom: 64px;
+										@media (max-width: 800px) {
+											flex-direction: column;
+										}
+									`
+									}
                 >
                   <Text size='headline'>design +&nbsp;</Text>
                   <HeadlineButton onClick={() => setDiscipline('engineering')}>engineering</HeadlineButton>
