@@ -30,6 +30,10 @@ const SubHeadline = styled(BaseTextStyles)`
   background: ${({theme}) => theme.mode ? 'blue' : undefined};
   margin: 0px;
   width: fit-content;
+
+	@media (max-width: 800px) {
+		font-size: 24px;
+	}
 `
 
 const Body = styled(BaseTextStyles)`

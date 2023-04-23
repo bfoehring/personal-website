@@ -45,7 +45,7 @@ const ModeToggle = ({mode, setMode}: {mode: string, setMode: React.Dispatch<stri
 
   return (
     <SmallBodyButton onClick={() => setMode(checkMode(mode))}>
-      <div
+      <span
         css={{
           display: 'flex',
           alignItems: 'center'
@@ -54,25 +54,25 @@ const ModeToggle = ({mode, setMode}: {mode: string, setMode: React.Dispatch<stri
         {
           setModeIcon(mode)
         }
-        <div css={{marginLeft: '8px'}}>
+        <span css={{marginLeft: '8px'}}>
           Mode
-        </div>
-      </div>
+        </span>
+      </span>
     </SmallBodyButton>
   )
 }
 
 const AppWrap = styled.div`
   background: ${({theme}) => theme.colors.appBackground};
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   transition: all .25s;
 `
 
 const AppContent = styled.article`
   box-sizing: border-box;
   max-width: 1400px;
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -185,17 +185,17 @@ function App() {
               <ModeToggle mode={mode} setMode={setMode}/>
 							<Pipe />
 							<SmallBodyButton onClick={() => setDiscipline('a11y')}>
-								<div
+								<span
 									css={{
 										display: 'flex',
 										alignItems: 'center'
 									}}
 								>
 									<Eye />
-									<div css={{marginLeft: '8px'}}>
+									<span css={{marginLeft: '8px'}}>
 										A11y
-									</div>
-								</div>
+									</span>
+								</span>
 							</SmallBodyButton>
 							<Pipe />
 							<Link size='smallBody' href='https://github.com/bfoehring'>Github</Link>

@@ -1,7 +1,7 @@
 import { Text } from './Text'
 import styled from '@emotion/styled'
 
-const StyledPipe = styled.div`
+const StyledPipe = styled.span`
 	margin: 0px 16px;
 `
 
