@@ -108,7 +108,7 @@ export const TextCursor = ({size}: IIcon) => {
 
 const StyledCursor = styled.div`
 	height: 41px;
-	width: 24px;
+	width: 20px;
 	background: ${({theme}) => theme.colors.body};
 	animation-duration: .75s;
   animation-name: blink;
