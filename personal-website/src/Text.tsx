@@ -1,7 +1,7 @@
 import styled from "@emotion/styled"
 
 const BaseTextStyles = styled.span`
-  font-family: ${({theme}) => theme.discipline === 'engineering' ? 'IBM Plex Mono' : 'sans-serif, "Helvetica"'};
+  font-family: ${({theme}) => theme.discipline === 'engineering' ? '"IBM Plex Mono", monospace' : '"Helvetica", sans-serif'};
   font-weight: normal;
   transition: all .25s;
 `
