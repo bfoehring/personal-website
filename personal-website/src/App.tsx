@@ -9,7 +9,7 @@ import {
 import { useState, useEffect, ReactElement } from 'react'
 import { ThemeProvider } from '@emotion/react'
 import styled from '@emotion/styled'
-import { Sun, Moon } from './icons/Icon'
+import { Sun, Moon, Cursor } from './icons/Icon'
 import { Text } from './Text'
 import { Logo } from './Logo'
 import { HeadlineButton, SmallBodyButton } from './Button'
@@ -122,7 +122,7 @@ function App() {
                   }}
                 >
                   <HeadlineButton onClick={() => setDiscipline('design')}>design</HeadlineButton>
-                  <Text size='headline'>&nbsp;+ engineering</Text> :
+                  <Text size='headline'>&nbsp;+ engineering</Text>
                 </div> :
                 <div
                   css={{
@@ -134,7 +134,12 @@ function App() {
                 </div>
               }
               <Text size='subHeadline'>design engineer, systems</Text>
-              <Link size='subHeadline' href='https://seeds.sproutsocial.com/'>seeds.sproutsocial.com</Link>
+							<div
+								css={{display: 'flex'}}
+							>
+								<Link size='subHeadline' href='https://seeds.sproutsocial.com/'>seeds.sproutsocial.com</Link>
+								<Cursor discipline={discipline} />
+							</div>
             </section>
             <AppFooter>
               <ModeToggle mode={mode} setMode={setMode}/>
