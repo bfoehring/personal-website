@@ -77,7 +77,7 @@ const AppContent = styled.article`
   padding: 80px 0px;
 	transition: all .25s;
 
-	@media (max-width: 800px) {
+	@media (max-width: 800px), (max-height: 400px) {
 		margin: 0px;
   	padding: 20px;
 	}
@@ -119,7 +119,11 @@ function App() {
             <header>
               <Logo />
             </header>
-            <section>
+            <section
+							css={css`
+								padding: 24px 0px;
+							`}
+						>
               {
                 discipline === 'engineering' ?
                 <div
@@ -128,6 +132,10 @@ function App() {
 										margin-bottom: 64px;
 										@media (max-width: 800px) {
 											flex-direction: column;
+										}
+
+										@media (max-height: 400px) {
+											margin-bottom: 24px;
 										}
 									`
 									}
