@@ -5,6 +5,7 @@ import { ReactElement } from "react"
 const StyledLink = styled.a<ILink>`
 	text-decoration: none;
 	color: ${({theme, size = 'body'}) => theme.colors[size]};
+	transition: all.25s;
 
 	&:hover {
 		text-decoration: underline;
