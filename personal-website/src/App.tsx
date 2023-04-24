@@ -77,9 +77,9 @@ const AppContent = styled.article`
   flex-direction: column;
   justify-content: space-between;
   margin: 0px auto;
-  padding: 80px 0px;
+  padding: 80px;
 	transition: all .25s;
-	overflow: scroll;
+	overflow: auto;
 
 	@media (max-width: 800px), (max-height: 400px) {
 		margin: 0px;
