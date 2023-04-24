@@ -79,11 +79,11 @@ const AppContent = styled.article`
   margin: 0px auto;
   padding: 80px 0px;
 	transition: all .25s;
+	overflow: scroll;
 
 	@media (max-width: 800px), (max-height: 400px) {
 		margin: 0px;
   	padding: 20px;
-		overflow: scroll;
 	}
 `
 
